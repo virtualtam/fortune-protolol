@@ -5,9 +5,10 @@
 # author	VirtualTam	<virtualtam[at]myopera[dot]com>
 #
 # Known caveats
-# - multi-line protolols, manual intervention required!
+# - multi-line entries
+# - special characters
 if [ -f protolol ]; then
     mv protolol protolol.old
 fi
-sed -e 's/\s\?#protolol//g' -e 's/@\(\w*:\?\) \(.*\)/\2\n- \1\n%/' <protolol.txt >protolol
+sed -e 's/\s\?#protolol//g' -e 's/@\(\w*\):\? \(.*\)/\2\n- \1\n%/' <protolol.txt >protolol
 
